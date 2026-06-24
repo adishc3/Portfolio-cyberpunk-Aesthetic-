@@ -203,15 +203,6 @@ function App() {
           </div>
         </div>
 
-        <div className="social-links">
-          <a href="https://github.com/adishc3" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <a href="https://www.instagram.com/aadiiishhh?igsh=MXZhdGVpOHFkb2xhZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
-            Instagram
-          </a>
-          <a href="mailto:adishadhiperalasseri@gmail.com">Email</a>
-        </div>
       </motion.section>
 
       {/* Projects Screen */}
@@ -238,16 +229,18 @@ function App() {
           </div>
         </div>
 
-        <div className="social-links">
-          <a href="https://github.com/adishc3" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <a href="https://www.instagram.com/aadiiishhh?igsh=MXZhdGVpOHFkb2xhZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
-            Instagram
-          </a>
-          <a href="mailto:adishadhiperalasseri@gmail.com">Email</a>
-        </div>
       </motion.section>
+
+      {/* Social links — rendered once at root level for reliable clickability */}
+      <div className="social-links">
+        <a href="https://github.com/adishc3" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+        <a href="https://www.instagram.com/aadiiishhh?igsh=MXZhdGVpOHFkb2xhZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
+          Instagram
+        </a>
+        <a href="mailto:adishadhiperalasseri@gmail.com">Email</a>
+      </div>
     </div>
   )
 }

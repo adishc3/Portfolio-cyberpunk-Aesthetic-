@@ -20,6 +20,8 @@
   --panel-bg: #060608;
   --panel-border: rgba(255, 255, 255, 0.10);
   --accent: #ff5ecb;
+  --accent-rgb: 255, 94, 203;
+  --accent-glow: 0 0 8px rgba(255, 94, 203, 0.4);
   --accent-soft: rgba(255, 94, 203, 0.12);
   --link: #f8f8fb;
   --panel-right-bg: #030305;
@@ -32,6 +34,8 @@
   --panel-bg: #ffffff;
   --panel-border: rgba(8, 19, 31, 0.08);
   --accent: #2563eb;
+  --accent-rgb: 37, 99, 235;
+  --accent-glow: 0 0 8px rgba(37, 99, 235, 0.35);
   --accent-soft: rgba(37, 99, 235, 0.12);
   --link: #08131f;
   --panel-right-bg: #f6f9ff;
@@ -312,12 +316,16 @@
 .social-links a {
   color: var(--link);
   text-decoration: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
+  display: inline-block;
 }
 
 .social-links a:hover {
-  opacity: 0.72;
-  transform: translateY(-1px);
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(var(--accent-rgb), 0.35);
+  transform: scale(1.03);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 980px) {
@@ -349,13 +357,39 @@
   }
 }
 
-@media (max-width: 640px) {
-  .panel-left {
-    padding: 32px 20px 64px;
-  }
+/* ── Interactive text transitions ── */
+.hero-name,
+.hero-title,
+.section-title,
+.section-heading,
+.projects-title,
+.project-tech,
+.project-copy,
+.tech-inline {
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
 
-  .theme-toggle {
-    width: 40px;
-    height: 40px;
-  }
+/* Project title — also transitions transform for the slide effect */
+.project-label {
+  transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
+}
+
+/* ── Hover effects ── */
+.hero-name:hover,
+.hero-title:hover,
+.section-title:hover,
+.section-heading:hover,
+.projects-title:hover,
+.project-tech:hover,
+.project-copy:hover,
+.tech-inline:hover {
+  color: var(--accent);
+  text-shadow: var(--accent-glow);
+}
+
+/* Project title — slightly stronger hover with slide */
+.project-label:hover {
+  color: var(--accent);
+  text-shadow: var(--accent-glow);
+  transform: translateX(4px);
 }
